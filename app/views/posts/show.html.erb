@@ -1,0 +1,3 @@
+<h2><%= @post.title %></h2>
+<p><%= simple_format @post.body %></p>
+<p><%= image_tag @post.picture.url if @post.picture? %></p>

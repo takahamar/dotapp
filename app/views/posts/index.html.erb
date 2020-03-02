@@ -1,0 +1,29 @@
+<h2>
+    <% if logged_in? %>
+        <%= link_to "Users", users_path, class: 'header-menu'  %><br>
+        <%= link_to "Profile", current_user, class: 'header-menu' %><br>
+        <%= link_to "Settings", edit_user_path(current_user), class: 'header-menu' %><br>
+        <%= link_to "Log out", logout_path, method: :delete, class: 'header-menu' %><br>
+        <%= link_to 'New Post', new_post_path, class: 'header-menu' %><br>
+        My posts
+    <% else %>
+        <%= link_to "Sign up", signup_path, class: "header-menu" %><br>
+        <%= link_to "Log in", login_path, class: 'header-menu' %><br>
+    <% end %>
+</h2>
+<% if logged_in? %>
+<ul>
+    <% @posts.each do |post| %>
+    <li>
+        <%= link_to post.title, post_path(post) %>
+        <%= link_to '[Edit]', edit_post_path(post), class: 'command' %>
+        <%= link_to "[x]",
+            post,
+            method: :delete,
+            class: 'command',
+            data: { confirm: "You sure?" } 
+        %>
+    </li>
+    <% end %>
+</ul>
+<% end %>
