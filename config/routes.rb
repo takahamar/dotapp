@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
-
-  get 'sessions/new'
+    
+    post   'likes/:post_id/create', to: "likes#create"
+    get    'sessions/new'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
     resources :posts
     
-    root 'users#index'
+    root   'users#index'
     
     get    '/signup',  to: 'users#new'
     #post  '/signup',  to: 'users#create'

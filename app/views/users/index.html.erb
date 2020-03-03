@@ -1,5 +1,13 @@
 <% provide(:title, 'All users') %>
-<h2>All users</h2>
+<h2>
+    All users
+    <% if logged_in? %>
+        <%= link_to "Log out", logout_path, method: :delete, class: 'header-menu' %><br>
+    <% else %>
+        <%= link_to "Sign up", signup_path, class: "header-menu" %><br>
+        <%= link_to "Log in", login_path, class: 'header-menu' %><br>
+    <% end %>
+</h2>
 
 <%= will_paginate %>
 

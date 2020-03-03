@@ -1,2 +1,5 @@
-<h2>Edit post</h2>
+<h2>
+    Edit post
+    <%= link_to "Back", user_path(@post.user), class: 'header-menu'  %><br>
+</h2>
 <%= render 'form' %>

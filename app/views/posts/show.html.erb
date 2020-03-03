@@ -1,3 +1,13 @@
-<h2><%= @post.title %></h2>
+<h2>
+    <%= @post.title %>
+    <%= link_to "Back", user_path(@post.user), class: 'header-menu'  %><br>
+</h2>
 <p><%= simple_format @post.body %></p>
 <p><%= image_tag @post.picture.url if @post.picture? %></p>
+<p>
+<% if Like.find_by(user_id: current_user.id, post_id: @post.id) %>
+いいね！済み
+<% else %>
+いいね！していません
+<% end %>
+</p>

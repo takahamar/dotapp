@@ -1,2 +1,5 @@
-<h2>Add New Post</h2>
+<h2>
+    Add New Post
+    <%= link_to "Back", user_path(current_user), class: 'header-menu'  %>
+</h2>
 <%= render 'form' %>
