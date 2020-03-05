@@ -1,9 +1,13 @@
 class LikesController < ApplicationController
-  # before_actionに「:authenticate_user」を追加してください
-  before_action :authenticate_user
+  before_action :logged_in_user
   
-  # createアクションを追加してください
   def create
+    @post = Post.find(params[:post_id])
+    @post.iine(current_user)
   end
-  
+
+  def destroy
+    @post = Like.find(params[:id]).post
+    @post.uniine(current_user)
+  end
 end

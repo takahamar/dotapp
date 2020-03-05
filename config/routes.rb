@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
     
-    post   'likes/:post_id/create', to: "likes#create"
+    resources :likes, only: [:create, :destroy]
     get    'sessions/new'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
