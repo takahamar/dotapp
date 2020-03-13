@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200307014849) do
+ActiveRecord::Schema.define(version: 20200303102124) do
 
   create_table "likes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "user_id", null: false
@@ -29,7 +29,6 @@ ActiveRecord::Schema.define(version: 20200307014849) do
     t.datetime "updated_at", null: false
     t.string "picture"
     t.integer "user_id"
-    t.integer "likes_count"
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

@@ -11,7 +11,7 @@ class Post < ApplicationRecord
     
     # マイクロポストをいいねする
     def iine(user)
-    likes.create(user_id: user.id)
+      likes.create(user_id: user.id)
     end
 
     # マイクロポストのいいねを解除する（ネーミングセンスに対するクレームは受け付けません）
