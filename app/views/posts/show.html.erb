@@ -6,7 +6,13 @@
 <p><%= image_tag @post.picture.url if @post.picture? %></p>
 
 <% if Like.find_by(user_id: current_user.id, post_id: @post.id) %>
-    <%= link_to "いいね済み", post_like_path(@post), {method: "delete"} %>
+    <%= link_to(post_like_path(@post), {method: "delete"}) do %>
+        <span class="fa fa-heart like-btn-unlike"></span>
+    <% end %>
 <% else %>
-    <%= link_to "いいね", post_likes_path(@post), {method: "post"} %>
+    <%= link_to(post_likes_path(@post), {method: "post"}) do %>
+        <span class="fa fa-heart like-btn"></span>
+    <% end %>
 <% end %>
+
+<%= @likes_count %>
