@@ -2,8 +2,10 @@ Rails.application.routes.draw do
     
     resources :posts
     
+    #resources :likes, only: [:create, :destroy]
     #post "likes/:post_id/create", to: "likes#create"
     #post "likes/:post_id/destroy", to: "likes#destroy"
+    
     resources :posts do
       resources :likes, only: [:create, :destroy]
     end
