@@ -51,6 +51,12 @@ class UsersController < ApplicationController
     redirect_to users_url
   end
   
+  def likes
+    @user = User.find_by(id: params[:id])
+    @likes = Like.where(user_id: @user.id)
+    @post = Post.find_by(id: @likes.post_id)
+  end
+  
   private
   
     def user_params
