@@ -23,5 +23,5 @@ Rails.application.routes.draw do
     delete '/logout',  to: 'sessions#destroy'
     resources :users
     
-    get 'users/:id/likes', to: 'users#likes'
+    get 'users/:id/likes', to: 'users#likes', as: 'user_likes'
 end

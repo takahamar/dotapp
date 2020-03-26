@@ -15,6 +15,7 @@
         <%= link_to "Settings", edit_user_path(current_user), class: 'header-menu' %><br>
         <%= link_to "Log out", logout_path, method: :delete, class: 'header-menu' %><br>
         <%= link_to 'New Post', new_post_path, class: 'header-menu' %><br>
+        <%= link_to 'Like Post', user_likes_path, class: 'header-menu' %><br>
         Posts of <%= @user.name %>
     <% else %>
         <%= link_to "Sign up", signup_path, class: "header-menu" %><br>
